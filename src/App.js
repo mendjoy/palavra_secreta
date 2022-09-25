@@ -48,6 +48,8 @@ function App() {
  
 //Inicia o jogo
   const startGame = () =>{
+    //Limpar letras
+    clearLetterStages();
     // escolher palavra e categoria
     const {word, category} = pickWordAndCategory();
 
@@ -95,14 +97,28 @@ function App() {
     setWrongLetters([])
   }
 
+  
+
   useEffect(() => {
-    if (guesses >= 0){
+    if (guesses <= 0){
       //resetar todos os estados 
       clearLetterStages()
       setGameStage(stages[2].name);
     }
 
-  }, [guesses])
+  }, [guesses]);
+
+  //checar condição de vitoria 
+  useEffect(() => {
+    const uniqueLetters = [...new Set(letters)]
+
+    //condição de vitoria
+    if(guessedLetters.length === uniqueLetters.length){
+      setScore((actualScore) => actualScore += 100) //atualizar score
+      startGame(); //reinicia o jogo 
+    }
+
+  }, [guessedLetters, letters, startGame])
     
 //reiniciar jogo 
   const retry = () => {
