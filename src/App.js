@@ -23,8 +23,13 @@ function App() {
   const[gameStage, setGameStage] = useState(stages[0].name);
   const [words] = useState(wordList);
   const [pickedWord, setPickedWord] = useState('');
-  const  [pickedCategory, setPickedCategory] = useState('');
+  const [pickedCategory, setPickedCategory] = useState('');
   const [letters, setLetters] = useState([]);
+
+  const [guessedLetters, setGuesseLetters] = useState([]);
+  const [wrongLetters, setWrongLetters] = useState([]); 
+  const [guesses, setGuesses] = useState(5); 
+  const [score, setScore] = useState(0);
 
   //escolher categoria aleatoria 
   const pickWordAndCategory = () => {
@@ -54,7 +59,7 @@ function App() {
     //preencher states 
     setPickedWord(word);
     setPickedCategory(category);
-    setLetters(letters);
+    setLetters(wordLetters);
 
 
     setGameStage(stages[1].name);
@@ -76,7 +81,16 @@ function App() {
   return (
     <div className="App">
      {gameStage === 'start' && <StartScreen startGame={startGame}/>}
-     {gameStage === 'game' && <Game verifyLetter={verifyLetter}/>}
+
+     {gameStage === 'game' && 
+     <Game verifyLetter={verifyLetter} 
+        pickedWord={pickedWord} 
+        pickedCategory={pickedCategory} l
+        etters={letters} 
+        guessedLetters={guessedLetters} 
+        wrongLetters={wrongLetters} 
+        guesses={guesses} 
+        score={score}/>}
      {gameStage === 'gameover' && <GameOver retry={retry}/>}
     </div>
   );
