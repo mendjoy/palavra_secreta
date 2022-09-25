@@ -67,9 +67,31 @@ function App() {
 
 //letra input
   const verifyLetter = (letter) =>{
-    console.log(letter)
-  }
+    const normalizedLetter = letter.toLowerCase();
 
+    //checa se a letra ja foi enviada
+    if(guessedLetters.includes(normalizedLetter) || wrongLetters.includes(normalizedLetter))
+    {
+      return; 
+    };
+
+    //colocar as letras chutadas em um array ou subtrair a chance
+    if(letters.includes(normalizedLetter)){
+        setGuesseLetters((actualGuessedLetters)=> [
+          ...actualGuessedLetters, 
+          normalizedLetter,
+        ])
+    } else {
+      setWrongLetters((actualWrongLetters)=> [
+        ...actualWrongLetters, 
+        normalizedLetter,
+      ]);
+    }
+
+   
+  };
+    console.log(guessedLetters)
+    console.log(wrongLetters)
 //reiniciar jogo 
   const retry = () => {
     setGameStage(stages[0].name)
