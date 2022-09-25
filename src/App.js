@@ -85,8 +85,8 @@ function App() {
      {gameStage === 'game' && 
      <Game verifyLetter={verifyLetter} 
         pickedWord={pickedWord} 
-        pickedCategory={pickedCategory} l
-        etters={letters} 
+        pickedCategory={pickedCategory} 
+        letters={letters} 
         guessedLetters={guessedLetters} 
         wrongLetters={wrongLetters} 
         guesses={guesses} 
