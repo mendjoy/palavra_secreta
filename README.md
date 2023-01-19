@@ -1,14 +1,22 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1>Projeto Palavra Secreta</h1>
 
-## Available Scripts
+<p>Este projeto foi desenvolvido em React, durante o curso de React da plataforma Udemy, sob as instruções do <a href="https://www.udemy.com/user/matheus-battisti/?gclid=Cj0KCQiA8aOeBhCWARIsANRFrQG_L_muRLSl42Kds4DNZsmK04oMrGvLAdrpcBRHR8MovYXr_OKqnrcaAmZJEALw_wcB">Matheus Battisti</a>. O intuito deste game é descobrir as palavras secretas e pontuar, antes que acabem as chances.</p>
 
-In the project directory, you can run:
+<p align="center">
+    <img width="600"src="game.gif"/>
+</p>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Scripts
+
+<p>Para baixar as dependências do projeto:</p>
+
+#### `npm install`
+
+
+<p>Para rodar o projeto:</p>
+
+#### `npm start`
 
 
